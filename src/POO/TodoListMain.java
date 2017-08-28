@@ -10,11 +10,13 @@ public class TodoListMain {
 		todoList.add("faut bosser");
 		todoList.add("et si on bosse bien...");
 		todoList.add("on a plus besoin de definir les dimensions du tableau ;)");
+		todoList.add("si en plus on peut rajouter un peu de design, c'est tout benef'");
 
 		todoList.printTodos(); // afficher les choses à faire
 		// 1. un truc à faire  
 		// 2. encore un truc à faire  
 		// 3. faut bosser
+		System.out.println("");
 	}
 
 }

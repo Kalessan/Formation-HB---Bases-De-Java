@@ -19,15 +19,44 @@ public class TodoList {
 		
 		// On renseigne la valeur actuelle
 		todos[currentPosition] = t;
-		currentPosition++;
-		
+		currentPosition++;		
 	}
 
 	public void printTodos() {
+		// Bonus Design =====================================================
+		
+		//Calcul de la plus grande chaine de caractères
+		int max = todos[0].length();
 		for (int i = 0; i < todos.length; i++) {
-			System.out.println((i+1) + ". " + todos[i]);
+			if (todos[i].length() > max) {
+				max = todos[i].length();
+			}
 		}
-		// A FAIRE: augmenter la capacité du tableau a chaque itération (en en créant un nouveau a chaque fois)
+	
+		// Construction de la bordure du haut
+		String bordureHautGauche = "";
+		String bordureHautDroite = "";
+		for (int i = 0; i < (max/2)+1; i++) {
+			bordureHautGauche += "=";
+			bordureHautDroite = bordureHautGauche;
+		}
+		if(max % 2 != 0) {
+			bordureHautDroite = bordureHautGauche + "=";
+		}		
+		System.out.println(bordureHautGauche + "ToDo List" + bordureHautDroite);
+		
+		// Ecriture des tâches et construction des bordures de droite 
+		String bordureDroite = "  ||";
+		for (int i = 0; i < todos.length; i++) {
+			String espacement = "";
+			for (int j = 0; j < (max - todos[i].length()) ; j++) {
+				espacement += " ";
+			}			
+			System.out.println("||  " + (i+1) + ". " + todos[i] + espacement + bordureDroite);
+		}
+		
+		// Construction de la bordure du Bas
+		System.out.println(bordureHautGauche + "=========" + bordureHautDroite);
 
 	}
 
