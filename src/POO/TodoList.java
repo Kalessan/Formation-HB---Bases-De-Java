@@ -1,13 +1,26 @@
 package POO;
 
 public class TodoList {
-	private String[] todos = new String[10];
 	private int currentPosition = 0;
-	
+	private String[] todos;
 
 	public void add(String t) {
+		// Création d'un tableau temporaire pour sauvegarder les données déjà entrées.
+		String[] todosTemp = new String[(currentPosition)];
+		for (int i = 0; i < todosTemp.length; i++) {
+			todosTemp[i] = todos[i];
+		}
+		
+		// Modification de la taille du tableau final, et réinsertion des anciennes données
+		todos = new String[currentPosition + 1];
+		for (int i = 0; i < todosTemp.length; i++) {
+			todos[i] = todosTemp[i];
+		}
+		
+		// On renseigne la valeur actuelle
 		todos[currentPosition] = t;
 		currentPosition++;
+		
 	}
 
 	public void printTodos() {
