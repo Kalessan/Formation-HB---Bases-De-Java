@@ -1,8 +1,9 @@
 package com.cgi.training.java.oop.designpatterns;
 
+// Design pattern permettant d'empêcher la création de plus d'une instance d'un objet
 public class Singleton {
 	private static Singleton instance;
-	private Singleton() {
+	private Singleton() { // Constructeur en PRIVE
 		
 	}
 	

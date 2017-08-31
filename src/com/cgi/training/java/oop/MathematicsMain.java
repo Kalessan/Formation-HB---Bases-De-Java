@@ -25,6 +25,8 @@ public class MathematicsMain {
 		
 		int cinqPlusTrois = mathematics.addition(5, 3);
 		System.out.println("L'addition de 5 et 3 vaut : " + cinqPlusTrois);
+		
+		System.out.println(mathematics.addition(Integer.MAX_VALUE, 1));
 	}
 
 }
